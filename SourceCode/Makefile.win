@@ -1,0 +1,58 @@
+# Project: ICP Assignment
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = main.o mainMenu.o inventoryCreationMenu.o addRecord.o displayRecord.o updateVaxQuantityMenu.o updateVaxQuantity.o writeToFile.o displayVaxDist.o searchVaxQuantity.o bubbleSort.o
+LINKOBJ  = main.o mainMenu.o inventoryCreationMenu.o addRecord.o displayRecord.o updateVaxQuantityMenu.o updateVaxQuantity.o writeToFile.o displayVaxDist.o searchVaxQuantity.o bubbleSort.o
+LIBS     = -L"D:/C/Dev-Cpp/MinGW64/lib" -L"D:/C/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -g3
+INCS     = -I"D:/C/Dev-Cpp/MinGW64/include" -I"D:/C/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/C/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"D:/C/Dev-Cpp/MinGW64/include" -I"D:/C/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/C/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"D:/C/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = "ICP Assignment.exe"
+CXXFLAGS = $(CXXINCS) -g3
+CFLAGS   = $(INCS) -g3
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+mainMenu.o: mainMenu.c
+	$(CC) -c mainMenu.c -o mainMenu.o $(CFLAGS)
+
+inventoryCreationMenu.o: inventoryCreationMenu.c
+	$(CC) -c inventoryCreationMenu.c -o inventoryCreationMenu.o $(CFLAGS)
+
+addRecord.o: addRecord.c
+	$(CC) -c addRecord.c -o addRecord.o $(CFLAGS)
+
+displayRecord.o: displayRecord.c
+	$(CC) -c displayRecord.c -o displayRecord.o $(CFLAGS)
+
+updateVaxQuantityMenu.o: updateVaxQuantityMenu.c
+	$(CC) -c updateVaxQuantityMenu.c -o updateVaxQuantityMenu.o $(CFLAGS)
+
+updateVaxQuantity.o: updateVaxQuantity.c
+	$(CC) -c updateVaxQuantity.c -o updateVaxQuantity.o $(CFLAGS)
+
+writeToFile.o: writeToFile.c
+	$(CC) -c writeToFile.c -o writeToFile.o $(CFLAGS)
+
+displayVaxDist.o: displayVaxDist.c
+	$(CC) -c displayVaxDist.c -o displayVaxDist.o $(CFLAGS)
+
+searchVaxQuantity.o: searchVaxQuantity.c
+	$(CC) -c searchVaxQuantity.c -o searchVaxQuantity.o $(CFLAGS)
+
+bubbleSort.o: bubbleSort.c
+	$(CC) -c bubbleSort.c -o bubbleSort.o $(CFLAGS)
